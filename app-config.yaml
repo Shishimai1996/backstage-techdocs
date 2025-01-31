@@ -65,7 +65,7 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
     local:
-      publishDirectory: '../../examples/docs'
+      publishDirectory: './catalogs'
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
@@ -85,17 +85,20 @@ catalog:
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
-      target: ../../examples/entities.yaml
+      target: ../../catalogs/examples/entities.yaml
+
+    - type: file
+      target: ../../catalogs/examples-2/secondcatalog.yaml
 
     # Local example template
     - type: file
-      target: ../../examples/template/template.yaml
+      target: ../../catalogs/examples/template/template.yaml
       rules:
         - allow: [Template]
 
     # Local example organizational data
     - type: file
-      target: ../../examples/org.yaml
+      target: ../../catalogs/examples/org.yaml
       rules:
         - allow: [User, Group]
 
