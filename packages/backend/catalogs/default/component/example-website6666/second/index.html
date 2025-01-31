@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#second" class="md-skip">
+        <a href="#adding-the-second-catalog-with-docs" class="md-skip">
           Skip to content
         </a>
       
@@ -216,9 +216,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#directory-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting started
+      Directory structure
     </span>
   </a>
   
@@ -259,9 +259,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#directory-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting started
+      Directory structure
     </span>
   </a>
   
@@ -282,10 +282,62 @@
                   
 
 
-<h1 id="second">Second<a class="headerlink" href="#second" title="Permanent link">&para;</a></h1>
-<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>second docs 
-Hello</p>
+<h1 id="adding-the-second-catalog-with-docs">Adding the second catalog with docs<a class="headerlink" href="#adding-the-second-catalog-with-docs" title="Permanent link">&para;</a></h1>
+<h2 id="directory-structure">Directory structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>backstage-techdocs/                # app name  
+│── packages/  
+│    ├── app/                      # Backstage frontend  
+│    ├── backend/                   # Backstage backend  
+│── catalogs/  
+│    ├── catalog-1/  
+│    │    ├── catalog-info.yaml      # 2. setting catalog info - metadata.annotations  
+│    │    ├── docs/                  # TechDocs directory  
+│    │    │    ├── mkdocs.yml        # 3. MkDocs setting - add mkdocs location  
+│    │    │    ├── index.md          # 4. the first page of doc  
+│    │    │    ├── assets/           # Images and static files  
+│    │    │    ├── other-docs.md     # other docs  
+│    ├── catalog-2/  
+│    │    ├── catalog-info.yaml      # file name can be anything  
+│    │    ├── docs/  
+│    │    │    ├── mkdocs.yml  
+│    │    │    ├── index.md          # first one must be index.md  
+│    │    │    ├── assets/  
+│    │    │    ├── other-docs.md  
+│    ├── catalog-3/  
+│    │    ├── catalog-info.yaml  
+│    │    ├── docs/  
+│    │    │    ├── mkdocs.yml  
+│    │    │    ├── index.md  
+│    │    │    ├── assets/  
+│    │    │    ├── other-docs.md  
+│── app-config.yaml                  # 1. Setting catalog.locations and techdocs.publisuer.local.publishDirectory  
+</code></pre></div></td></tr></table></div>
 
 
 
