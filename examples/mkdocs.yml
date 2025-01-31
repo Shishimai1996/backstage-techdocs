@@ -1,0 +1,6 @@
+site_name: example-website6666
+# nav:
+#   - Home: index.md
+docs_dir: "docs"
+plugins:
+  - techdocs-core

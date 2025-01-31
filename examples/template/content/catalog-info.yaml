@@ -1,8 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.name | dump }}
+  name: example-nodejs-template
+  # annotations:
+  #   backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:guest
   lifecycle: experimental
+

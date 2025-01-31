@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+backstage_techdocs.egg-info/PKG-INFO
+backstage_techdocs.egg-info/SOURCES.txt
+backstage_techdocs.egg-info/dependency_links.txt
+backstage_techdocs.egg-info/top_level.txt

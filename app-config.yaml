@@ -58,9 +58,13 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'docker'
+    mkdocs:
+      defaultPlugins: ['techdocs-core']
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    local:
+      publishDirectory: '../../docs'
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
