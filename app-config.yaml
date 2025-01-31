@@ -59,12 +59,13 @@ techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
     runIn: 'local' # Alternatives - 'docker'
-    mkdocs:
+    mkdocs: 
+      omitTechdocsCorePlugin: false
       defaultPlugins: ['techdocs-core']
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
     local:
-      publishDirectory: '../../docs'
+      publishDirectory: '../../examples/docs'
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
