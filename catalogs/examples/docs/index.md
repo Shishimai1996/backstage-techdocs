@@ -1,8 +1,7 @@
 # How to create techdocs?
 
-** Run in virtual environment!! **
-
 ## Getting started
+you need to setup frontend and backend app then you need to install MKdocs by python.
 
 ### Setting up frontend
 https://backstage.io/docs/features/techdocs/getting-started#adding-techdocs-frontend-plugin
@@ -49,4 +48,15 @@ mkdocs serve
 npx @techdocs/cli generate --no-docker --source-dir /Users/mai.shimizu/Documents/GitHub/backstage-techdocs/catalogs/examples
 ``
 
+### create docs
+https://backstage.io/docs/features/techdocs/creating-and-publishing#create-a-basic-documentation-setup
+
+* Run in virtual environment!! yarn dev
+
+### related files
+#[app-config.yaml](../../../app-config.yaml)
+#[catalog-info.yaml](../entities.yaml)
+#[mkdocs.yml](../mkdocs.yml)
+
 ### If needed, add pyproject.toml
+#[file](../../../pyproject.toml)

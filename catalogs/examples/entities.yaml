@@ -13,7 +13,7 @@ kind: Component
 metadata:
   name: example-website6666
   annotations:
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:. #where you put /docs
 spec:
   type: website
   lifecycle: experimental

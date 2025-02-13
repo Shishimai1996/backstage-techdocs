@@ -1,8 +1,8 @@
 site_name: example-website6666
 docs_dir: docs
 nav:
-  - Home: index.md
+  - Home: index.md  # mkdocs location
   - Second: second.md
 
 plugins:
-  - techdocs-core
+  - techdocs-core # install and set this 
