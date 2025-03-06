@@ -85,10 +85,13 @@ catalog:
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
-      target: ../../catalogs/examples/entities.yaml
+      target: ../../catalogs/techdocs/entities.yaml
 
     - type: file
-      target: ../../catalogs/examples-2/secondcatalog.yaml
+      target: ../../catalogs/catalog/secondcatalog.yaml
+
+    - type: file
+      target: ../../catalogs/keycloak-config/keycloakConfig.yaml
 
     # Local example template
     - type: file

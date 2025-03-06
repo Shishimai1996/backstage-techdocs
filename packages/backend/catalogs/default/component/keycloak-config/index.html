@@ -1,0 +1,939 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>keycloak-config</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#keycloak-configuration-with-backstage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="keycloak-config" class="md-header__button md-logo" aria-label="keycloak-config" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            keycloak-config
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="keycloak-config" class="md-nav__button md-logo" aria-label="keycloak-config" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    keycloak-config
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-app-configyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting app-config.yaml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-ui-for-oidc-at-apptsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting UI for OIDC at App.tsx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-apits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting api.ts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-auth-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add auth setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-auth-setting-to-indexts-file-on-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add auth setting to index.ts file on the backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycloak-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keycloak setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run application
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-app-configyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting app-config.yaml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-ui-for-oidc-at-apptsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting UI for OIDC at App.tsx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-apits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting api.ts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-auth-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add auth setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-auth-setting-to-indexts-file-on-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add auth setting to index.ts file on the backend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycloak-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keycloak setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run application
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="keycloak-configuration-with-backstage">Keycloak configuration with backstage<a class="headerlink" href="#keycloak-configuration-with-backstage" title="Permanent link">&para;</a></h1>
+<p>** use node version 18
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nvm use 18
+</code></pre></div></td></tr></table></div></p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>keycloak is not supported by the backstage. It needs to connect through oidc.
+You need to create a clientId and client secret at Keycloak and set it to app-config.yaml.
+You need to add a custom function to checking if oidc provider is matching the value returned from keycloak.
+<img alt="alt text" src="image.png" /></p>
+<h2 id="setting-app-configyaml">Setting app-config.yaml<a class="headerlink" href="#setting-app-configyaml" title="Permanent link">&para;</a></h2>
+<p>/my-app/app-config.yaml
+** clientId, clientSecret, and matadataUrl need to match to keycloak.
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>auth:
+  session:
+    secret: ${SESSION_SECRET}
+  environment: development
+  providers:
+    oidc:
+      development:
+        metadataUrl: ${AUTH_REALM_URL}/.well-known/openid-configuration
+        clientId: ${AUTH_MY_CLIENT_ID}
+        clientSecret: ${AUTH_MY_CLIENT_SECRET}
+        scopes: &quot;openid profile email&quot;
+</code></pre></div></td></tr></table></div></p>
+<h2 id="setting-ui-for-oidc-at-apptsx">Setting UI for OIDC at App.tsx<a class="headerlink" href="#setting-ui-for-oidc-at-apptsx" title="Permanent link">&para;</a></h2>
+<p>/my-app/packages/app/src/App.tsx
+This part will be the UI of login window.
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>  components: {
+    SignInPage: props =&gt; (
+      &lt;SignInPage
+        {...props}
+        auto
+        providers={[
+          {
+            id: &#39;oidc&#39;, //this need to match to auth.providers at app-config.yaml
+            title: &#39;oidc Login&#39;,
+            message: &#39;Sign in using oidc&#39;,
+            apiRef: oidcAuthApiRef,
+          },
+        ]}
+      /&gt;
+    ),
+  },
+</code></pre></div></td></tr></table></div></p>
+<h2 id="setting-apits">Setting api.ts<a class="headerlink" href="#setting-apits" title="Permanent link">&para;</a></h2>
+<p>/my-app/packages/app/src/apis.ts
+this function create fetches to keycloak.
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code>import {
+  AnyApiFactory,
+  ApiRef,
+  BackstageIdentityApi,
+  configApiRef,
+  createApiFactory,
+  createApiRef,
+  discoveryApiRef,
+  oauthRequestApiRef,
+  OpenIdConnectApi,
+  ProfileInfoApi,
+  SessionApi,
+} from &#39;@backstage/core-plugin-api&#39;;
+import { OAuth2 } from &#39;@backstage/core-app-api&#39;;
+
+export const oidcAuthApiRef: ApiRef&lt;
+  OpenIdConnectApi &amp; // The OIDC API that will handle authentification
+    ProfileInfoApi &amp; // Profile API for requesting user profile info from the auth provider in question
+    BackstageIdentityApi &amp; // Backstage Identity API to handle and associate the user profile with backstage identity
+    SessionApi // Sesssion API, to handle the session the user will have while logged in
+&gt; = createApiRef({
+  id: &#39;oidc-provider&#39;, // Can be anything as long as it doesn&#39;t conflict with other API ref IDs
+});
+
+export const apis: AnyApiFactory[] = [
+  createApiFactory({
+    api: oidcAuthApiRef,
+    deps: {
+      discoveryApi: discoveryApiRef,
+      oauthRequestApi: oauthRequestApiRef,
+      configApi: configApiRef,
+    },
+    factory: ({ discoveryApi, oauthRequestApi, configApi }) =&gt;
+      OAuth2.create({
+        configApi,
+        discoveryApi,
+        oauthRequestApi,
+        provider: {
+          id: &#39;oidc&#39;, //this need to match to auth.providers at app-config.yaml
+          title: &#39;oidc&#39;,
+          icon: () =&gt; null,
+        },
+        environment: configApi.getOptionalString(&#39;auth.environment&#39;), //this comes from app-config.yaml
+        defaultScopes: [&#39;openid&#39;, &#39;profile&#39;, &#39;email&#39;],
+        popupOptions: {
+          size: {
+            width: 1000,
+            height: 1000,
+          },
+        },
+      }),
+  }),
+];
+</code></pre></div></td></tr></table></div></p>
+<h2 id="add-auth-setting">Add auth setting<a class="headerlink" href="#add-auth-setting" title="Permanent link">&para;</a></h2>
+<p>/my-app/packages/backend/src/modules/auths/authProvidersModule.ts
+This function catches data from keycloak and check if it is oidc provider.
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code>import {
+  providers,
+  defaultAuthProviderFactories,
+  ProviderFactories,
+} from &#39;@backstage/plugin-auth-backend&#39;;
+import {
+  stringifyEntityRef,
+  DEFAULT_NAMESPACE,
+} from &#39;@backstage/catalog-model&#39;;
+import {
+  AuthProviderFactory,
+  AuthResolverContext,
+  authProvidersExtensionPoint,
+  createOAuthProviderFactory,
+} from &#39;@backstage/plugin-auth-node&#39;;
+import {
+  coreServices,
+  createBackendModule,
+} from &#39;@backstage/backend-plugin-api&#39;;
+import { oidcAuthenticator } from &#39;@backstage/plugin-auth-backend-module-oidc-provider&#39;;
+
+async function signInWithCatalogUserOptional(
+  name: string,
+  ctx: AuthResolverContext,
+) {
+  try {
+    const signedInUser = await ctx.signInWithCatalogUser({
+      entityRef: { name },
+    });
+
+    return Promise.resolve(signedInUser);
+  } catch (e) {
+    const userEntityRef = stringifyEntityRef({
+      kind: &#39;User&#39;,
+      name: name,
+      namespace: DEFAULT_NAMESPACE,
+    });
+
+    return ctx.issueToken({
+      claims: {
+        sub: userEntityRef,
+        ent: [userEntityRef],
+      },
+    });
+  }
+}
+
+function getAuthProviderFactory(providerId: string): AuthProviderFactory {
+  switch (providerId) {
+    case &#39;oidc&#39;:
+      return createOAuthProviderFactory({
+        authenticator: oidcAuthenticator,
+        async signInResolver({ profile }, ctx) {
+          console.log(&#39;oidc called&#39;, ctx);
+          if (!profile.email) {
+            throw new Error(
+              &#39;Login failed, user profile does not contain an email&#39;,
+            );
+          }
+          // Split the email into the local part and the domain.
+          const [localPart, domain] = profile.email.split(&#39;@&#39;);
+
+          // Next we verify the email domain. It is recommended to include this
+          // kind of check if you don&#39;t look up the user in an external service.
+          if (domain !== &#39;woven-planet.global&#39;) {
+            throw new Error(
+              `Login failed, &#39;${profile.email}&#39; does not belong to the expected domain`,
+            );
+          }
+
+          // By using `stringifyEntityRef` we ensure that the reference is formatted correctly
+          const userEntity = stringifyEntityRef({
+            kind: &#39;User&#39;,
+            name: localPart,
+            namespace: DEFAULT_NAMESPACE,
+          });
+          return ctx.issueToken({
+            claims: {
+              sub: userEntity,
+              ent: [userEntity],
+            },
+          });
+        },
+      });
+    default:
+      throw new Error(`No auth provider found for ${providerId}`);
+  }
+}
+
+const authProvidersModule = createBackendModule({
+  pluginId: &#39;auth&#39;,
+  moduleId: &#39;auth.providers&#39;,
+  register(reg) {
+    reg.registerInit({
+      deps: {
+        config: coreServices.rootConfig,
+        authProviders: authProvidersExtensionPoint,
+        logger: coreServices.logger,
+      },
+      async init({ config, authProviders, logger }) {
+        console.log(&#39;is it called?&#39;, authProviders);
+        const providersConfig = config.getConfig(&#39;auth.providers&#39;);
+        const authFactories: ProviderFactories = {};
+        providersConfig
+          .keys()
+          .filter(key =&gt; key !== &#39;guest&#39;)
+          .forEach(providerId =&gt; {
+            const factory = getAuthProviderFactory(providerId);
+            authFactories[providerId] = factory;
+          });
+
+        const providerFactories: ProviderFactories = {
+          ...defaultAuthProviderFactories,
+          ...authFactories,
+        };
+
+        logger.info(
+          `Enabled Provider Factories : ${JSON.stringify(providerFactories)}`,
+        );
+
+        Object.entries(providerFactories).forEach(([providerId, factory]) =&gt; {
+          authProviders.registerProvider({ providerId, factory });
+        });
+      },
+    });
+  },
+});
+
+export default authProvidersModule;
+</code></pre></div></td></tr></table></div></p>
+<h2 id="add-auth-setting-to-indexts-file-on-the-backend">Add auth setting to index.ts file on the backend<a class="headerlink" href="#add-auth-setting-to-indexts-file-on-the-backend" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>import * as dotenv from &#39;dotenv&#39;;
+dotenv.config({ path: &#39;../../.env&#39; }); //add dotenv if you use .env file
+import { createBackend } from &#39;@backstage/backend-defaults&#39;;
+
+const backend = createBackend();
+
+// auth plugin
+backend.add(import(&#39;@backstage/plugin-auth-backend&#39;));
+// See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
+backend.add(import(&#39;@backstage/plugin-auth-backend-module-guest-provider&#39;));
+// See https://backstage.io/docs/auth/guest/provider
+
+// backend.add(import(&#39;@backstage/plugin-auth-backend-module-oidc-provider&#39;));
+
+backend.add(import(&#39;./modules/auths/authProvidersModule&#39;));
+backend.start();
+</code></pre></div></td></tr></table></div>
+<h2 id="keycloak-setting">Keycloak setting<a class="headerlink" href="#keycloak-setting" title="Permanent link">&para;</a></h2>
+<p>** local setting
+run keycloak locally with docker. create client
+<a href="https://www.keycloak.org/getting-started/getting-started-docker">https://www.keycloak.org/getting-started/getting-started-docker</a></p>
+<p>client setting</p>
+<p><img alt="alt text" src="image-1.png" /></p>
+<p>Root url: the URL where backstage running</p>
+<p>valid redirect URLs: the URL where keycloak redirect after authenticated. usually to the backend. </p>
+<p><img alt="alt text" src="image-2.png" /></p>
+<p>client authentication: it enable to generate client secret on credentials tab.</p>
+<p><img alt="alt text" src="image-3.png" /></p>
+<p><img alt="alt text" src="image-4.png" /></p>
+<p>add client secret from here</p>
+<p>** create openid scope from Client Scope page and add it to Client-&gt;myclient-&gt; client scope tab</p>
+<p><img alt="alt text" src="image-5.png" /></p>
+<p>add openid for client scope</p>
+<h2 id="run-application">Run application<a class="headerlink" href="#run-application" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>yarn install
+yarn dev
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "content.action.edit"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="search/main.js"></script>
+      
+    
+  </body>
+</html>
