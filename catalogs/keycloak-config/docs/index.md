@@ -31,6 +31,10 @@ auth:
         clientSecret: ${AUTH_MY_CLIENT_SECRET}
         scopes: "openid profile email"
 ```
+* generate session.secret by node.js, run this at terminal
+```
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
 
 ## Setting UI for OIDC at App.tsx
 /my-app/packages/app/src/App.tsx
