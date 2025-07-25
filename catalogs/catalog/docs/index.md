@@ -1,23 +1,24 @@
-# Create catalog
+# Create API catalog 
 
 ## Setting Authentication with Github and sign in 
+If you have already set the authentication, go to next step.
 https://www.youtube.com/watch?v=hhopHFT4J_o
 
-add auth to the app-config.yaml. if you use local environment, add github Client Id and secret to the app-config.local.yaml.
+* Add auth to the app-config.yaml. if you use local environment, add github Client Id and secret to the app-config.local.yaml.
 
 https://backstage.io/docs/auth/github/provider#configuration
 
-backend setting
+* Backend setting
 
 https://backstage.io/docs/auth/github/provider#backend-installation
 
-add custom function for github 
+* Add custom function for github 
 
 https://backstage.io/docs/auth/identity-resolver#custom-ownership-resolution
 
 https://backstage.io/docs/auth/identity-resolver#sign-in-without-users-in-the-catalog
 
-* if email = undefined, add the below to app-config.yaml
+** if email = undefined, add the below to app-config.yaml
 ```
 auth:
   environment: development
@@ -31,41 +32,48 @@ auth:
 
 ## Getting started
 
+### Connect with github by PAT
 Before setting catalog, connect with github. Backstage read yaml file from github.
 
-To create a Personal Access Token, go to your Github settings, add a name, and set an expiration date of your preference.
+* To create a Personal Access Token, go to your Github settings, add a name, and set an expiration date of your preference.
 
-* if the repository is private, you need to add check to the repo when you generate token at Github.
+** if the repository is private, you need to add check to the repo when you generate token at Github.
 
-Click on “Generate Token”, and take note of the details in a safe place.
+* Click on “Generate Token”, and take note of the details in a safe place.
 
 
-open your app-config.local.yaml, and add the credentials for your token as pictured below:
+* Open your app-config.local.yaml, and add the credentials for your token as pictured below:
 ```
 integrations:
   github:
     - host: github.com
       token: ghp_YOURTOKEN
 ```
-https://www.youtube.com/watch?v=U5V-rJQ8vJg
+Reference: https://www.youtube.com/watch?v=U5V-rJQ8vJg
 
-* if you cannot register catalog.yaml file by create new component, check if the github repository is private.
+** if you cannot register catalog.yaml file by create new component, check if the github repository is private.
 
-Once you have a YAML file in your repository and have enabled the GitHub integration in your Backstage instance, you’re ready to register a component in the Catalog. You’ll do so through Backstage’s UI.
+### Register YAML file URL of Github to Backstage
+Reference: https://www.youtube.com/watch?v=_gj9PxQo4i0
 
-Once here, click on "REGISTER EXISTING COMPONENT" in the top right corner. You’ll be prompted to input the location of your component’s YAML file.
+ Once you have a YAML file in your repository and have enabled the GitHub integration in your Backstage instance, you’re ready to register a component in the Catalog. Register yaml file of github to Backstage’s UI.
 
-Input the URL of your catalog-info.yaml file. Click on Analyze.
+* Click on "REGISTER EXISTING COMPONENT" in the top right corner. You’ll be prompted to input the location of your component’s YAML file.
 
-In your browser, navigate to your Backstage instance and click "Create" on the sidebar
+* Input the URL of your catalog-info.yaml file of github(ex. https://github.com/wcm-wig-lab/service-catalog-playground/blob/develop/service-catalog/examples/openapi.yaml). Click on Analyze.
 
-* if you get error to connect with swagger set like this in app-config.yaml:
+![analyze](image.png)
+
+** if you get error to connect with swagger set like this in app-config.yaml:
 ```
 backend:
   reading:
     allow:
       - host: petstore.swagger.io // remove http://
 ```
+
+Run yarn dev and see if swagger API can be seen in the screen. 
+![swagger](image-1.png)
 
 * reference
 https://trainingportal.linuxfoundation.org/learn/course/introduction-to-backstage-developer-portals-made-easy-lfs142/welcome-to-lfs142/course-information?page=1

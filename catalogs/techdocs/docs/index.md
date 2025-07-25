@@ -20,7 +20,8 @@ brew install python3
 
 ## Create and activate the virtual environment
 ```
-python3 -m myenv /opt/venv
+python3 -m venv myenv
+python3 -m myenv/opt/venv
 source  myenv/bin/activate  //activate python virtual environment.
 ```
 
